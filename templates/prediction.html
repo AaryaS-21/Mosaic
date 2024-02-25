@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %} {% endblock title %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename = 'assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename = 'assets/css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Selecao - v4.3.0
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Mosaic</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/"><b>Home</b></a></li>
+          <li><a class="nav-link scrollto" href="/prediction"><b>Prediction</b></a></li>
+          <li><a class="nav-link scrollto" href="/personality"><b>Personality</b></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    
+    <!-- ======= Breadcrumbs ======= -->
+
+    <span id="acceleration" style="color: 0xff0000; margin: -20px;">Hi!</span>
+    <center><div id="game"></div></center><!-- Game -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename = 'assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename = 'assets/js/main.js')}}"></script>
+
+  <!-- Game JS File -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+  <script type="module" src="{{url_for('static', filename = 'assets/js/game87.js')}}"></script>
+</body>
+<body>
+        
+  <div class="container">
+      <br>
+      <br>
+      <br>
+      {% if predicted_grade is none %}
+      <h2>Application Form</h2>
+      <form id="predictionForm" action="{{ url_for('prediction') }}" method="post">
+          <div>
+              <label for="age">Age (1: below 21, 2: 22-25, 3: above 26):</label> <br>
+              <input type="int" id="age" name="age" required>
+          </div>
+          <br>
+          <div>
+              <label for="gender">Gender (1: female, 2: male):</label> <br>
+              <input type="int" id="gender" name="gender" required>
+          </div>
+          <br>
+          <div>
+              <label for="school">School (1: private, 2: state, 3: other):</label> <br>
+              <input type="int" id="school" name="school" required>
+          </div>
+          <br>
+          <div>
+              <label for="scholarship">Scholarship: (1: None, 2: 25%, 3: 50%, 4: 75%, 5: Full):</label> <br>
+              <input type="int" id="scholarship" name="scholarship" required>
+          </div>
+          <br>
+          <div>
+              <label for="additionalwork">Additional work (1: Yes, 2: No):</label> <br>
+              <input type="int" id="additionalwork" name="additionalwork" required>
+          </div>
+          <br>
+          <div>
+              <label for="artsport">Regular artistic or sports activity (1: Yes, 2: No)</label> <br>
+              <input type="int" id="artsport" name="artsport" required>
+          </div>
+          <br>
+          <div>
+            <label for="partner">Do you have a partner (1: Yes, 2: No)</label> <br>
+            <input type="int" id="partner" name="partner" required>
+          </div>
+          <br>
+          <div>
+            <label for="seminars">Attendance to the seminars (1: Yes, 2: No)</label> <br>
+            <input type="int" id="seminars" name="seminars" required>
+          </div>
+          <br>
+          <div>
+            <label for="transport">Transportation (1: Bus, 2: Private car/taxi, 3: bicycle, 4: Other)</label> <br>
+            <input type="int" id="transport" name="transport" required>
+          </div>
+          <br>
+          <div>
+            <label for="medu">Mother’s education (1: primary school, 2: secondary school, 3: high school, 4: university, 5: MSc., 6: Ph.D.)</label> <br>
+            <input type="int" id="medu" name="medu" required>
+          </div>
+          <br>
+          <div>
+            <label for="fedu">Father's education (1: primary school, 2: secondary school, 3: high school, 4: university, 5: MSc., 6: Ph.D.)</label> <br>
+            <input type="int" id="fedu" name="fedu" required>
+          </div>
+          <br>
+          <div>
+            <label for="siblings">Number of siblings: (1: 1, 2:, 2, 3: 3, 4: 4, 5: 5 or above)</label> <br>
+            <input type="int" id="siblings" name="siblings" required>
+          </div>
+          <br>
+          <div>
+            <label for=parentalt>"Parental status: (1: married, 2: divorced, 3: died - one of them or both)</label> <br>
+            <input type="int" id="parentalt" name="parentalt" required>
+          </div>
+          <br>
+          <div>
+            <label for="moc">Mother's Occupation (1: retired, 2: housewife, 3: government officer, 4: private sector employee, 5: self-employment, 6: other)</label> <br>
+            <input type="int" id="moc" name="moc" required>
+          </div>
+          <br>
+          <div>
+            <label for="foc">Father's Occupation (1: retired, 2: housewife, 3: government officer, 4: private sector employee, 5: self-employment, 6: other)</label> <br>
+            <input type="int" id="foc" name="foc" required>
+          </div>
+          <br>
+
+          <div>
+            <label for="studyhr">Weekly study hours: (1: None, 2: 5 hrs, 3: 6-10 hours, 4: 11-20 hours, 5: more than 20 hours)</label> <br>
+            <input type="int" id="studyhr" name="studyhr" required>
+          </div>
+          <br>
+          <div>
+            <label for="readnosci">Reading frequency (non-scientific books/journals): (1: None, 2: Sometimes, 3: Often)</label> <br>
+            <input type="int" id="readnosci" name="readnosci" required>
+          </div>
+          <br>
+          <div>
+            <label for="readsci">Reading frequency (scientific books/journals): (1: None, 2: Sometimes, 3: Often)</label> <br>
+            <input type="int" id="readsci" name="readsci" required>
+          </div>
+          <br>
+          <div>
+            <label for="impact">Impact of your projects/activities on your success: (1: positive, 2: negative, 3: neutral)</label> <br>
+            <input type="int" id="impact" name="impact" required>
+          </div>
+          <br>
+          <div>
+            <label for="attendance">Attendance to classes (1: always, 2: sometimes, 3: never)</label> <br>
+            <input type="int" id="attendance" name="attendance" required>
+          </div>
+          <br>
+          <div>
+            <label for="prepone">Preparation to midterm exams 1: (1: alone, 2: with friends, 3: not applicable)</label> <br>
+            <input type="int" id="prepone" name="prepone" required>
+          </div>
+          <br>
+          <div>
+            <label for="preptwo">Preparation to midterm exams 2: (1: closest date to the exam, 2: regularly during the semester, 3: never)</label> <br>
+            <input type="int" id="preptwo" name="preptwo" required>
+          </div>
+          <br>
+          <div>
+            <label for="notes">Taking notes in classes: (1: never, 2: sometimes, 3: always)</label> <br>
+            <input type="int" id="notes" name="notes" required>
+          </div>
+          <br>
+          <div>
+            <label for="listen">Listening in classes: (1: never, 2: sometimes, 3: always)</label> <br>
+            <input type="int" id="listen" name="listen" required>
+          </div>
+          <br>
+          <div>
+            <label for="discuss">Discussion improves my sucess: (1: never, 2: sometimes, 3: always)</label> <br>
+            <input type="int" id="discuss" name="discuss" required>
+          </div>
+          <br>
+          <div>
+            <label for="flip">Flip-classroom: (1: not useful, 2: useful, 3: not applicable)</label> <br>
+            <input type="int" id="flip" name="flip" required>
+          </div>
+          <br>
+          <div>
+            <label for="gpalast">GPA last semester (/4.00): (1: below 2.00, 2: 2.00-2.49, 3: 2.50-2.99, 4: 3.00-3.49, 5: above 3.49)</label> <br>
+            <input type="int" id="gpalast" name="gpalast" required>
+          </div>
+          <br>
+          <div>
+            <label for="gpalast">Expected GPA (/4.00): (1: below 2.00, 2: 2.00-2.49, 3: 2.50-2.99, 4: 3.00-3.49, 5: above 3.49)</label> <br>
+            <input type="int" id="gpaexp" name="gpalast" required>
+          </div>
+        
+          <br>
+          <div>
+              <input type="submit" value="Submit">
+          </div>
+      </form>
+      {% else %}
+
+      <section class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+
+            <center><h3><b>Your Predicted GPA is: {{predicted_grade}}</b></h3><center>
+            <br>
+            <center><h3><b>Powered by AI Technology</b></h3><center></center>
+          </div>
+  
+        </div>
+      </section><!-- End Breadcrumbs -->
+      {% endif %}
+
+  </div>
+  
+  </body>
+
+</html>

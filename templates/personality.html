@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %} {% endblock title %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename = 'assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename = 'assets/css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Selecao - v4.3.0
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Mosaic</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/"><b>Home</b></a></li>
+          <li><a class="nav-link scrollto" href="/prediction"><b>Prediction</b></a></li>
+          <li><a class="nav-link scrollto" href="/personality"><b>Personality</b></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+
+    </section><!-- End Breadcrumbs -->
+    <span id="acceleration" style="color: 0xff0000; margin: -20px;">Hi!</span>
+    <center><div id="game"></div></center><!-- Game -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename = 'assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename = 'assets/js/main.js')}}"></script>
+
+  <!-- Game JS File -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+  <script type="module" src="{{url_for('static', filename = 'assets/js/game87.js')}}"></script>
+</body>
+<body>
+        
+  <div class="container">
+      <h2>Application Form</h2>
+      <form action="{{ url_for('personality') }}" method="post">
+          <div>
+              <label for="qn1">I am very competitive (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree) </label>
+              <input type="int" id="qn1" name="qn1" required>
+          </div>
+          <div>
+              <label for="qn2">I am passionate about helping underresourced people (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+              <input type="int" id="qn2" name="qn2" required>
+          </div>
+          <div>
+              <label for="qn3">I prefer spending time alone rather than in large groups  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+              <input type="int" id="qn3" name="qn3" required>
+          </div>
+          <div>
+              <label for="qn4">I enjoy working on multiple tasks simultaneously.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree) </label>
+              <input type="int" id="qn4" name="qn4" required>
+          </div>
+          <div>
+              <label for="qn5">Collaborating with others enhances my work performance.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+              <input type="int" id="qn5" name="qn5" required>
+          </div>
+          <div>
+              <label for="qn6">I enjoy working in a chaotic environment.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+              <input type="int" id="qn6" name="qn6" required>
+          </div>
+          <div>
+            <label for="qn7">I feel motivated when I have the freedom to manage my own schedule  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn7" name="qn7" required>
+          </div>
+          <div>
+            <label for="qn8">I often find myself daydreaming or lost in thought.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn8" name="qn8" required>
+          </div>
+          <div>
+            <label for="qn9">I excel at finding innovative solutions to problems  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn9" name="qn9" required>
+          </div>
+          
+          <div>
+            <label for="qn10">I have respect for traditional rules and values  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn10" name="qn10" required>
+          </div>
+          <div>
+            <label for="qn11">I work faster when I am alone  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn11" name="qn11" required>
+          </div>
+          <div>
+            <label for="qn12">I need freedom to do things my own unique ways  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn12" name="qn12" required>
+          </div>
+          <div>
+            <label for="qn13">I thrive in fast-paced environments where quick decision-making is required.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int id="qn13" name="qn13" required>
+          </div>
+          
+          <div>
+            <label for="qn14">I get frustrated by a lack of clear instructions  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="intint" id="qn14" name="qn14" required>
+          </div>
+          <div>
+            <label for="qn15">I get inspired by beauty in art and nature  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="intint" id="qn15" name="qn15" required>
+          </div>
+
+          <div>
+            <label for="qn16">I feel comfortable expressing my opinions in group settings.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="intint" id="qn16" name="qn16" required>
+          </div>
+
+          <div>
+            <label for="qn17">I like to have a procedure in place before starting a task  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn17" name="qn17" required>
+          </div>
+          <div>
+            <label for="qn18">I prioritize financial stability and career advancement.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn18" name="qn18" required>
+          </div>
+          <div>
+            <label for="qn19">I prefer stability and consistency in my work environment.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn19" name="qn19" required>
+          </div>
+          <div>
+            <label for="qn20">I enjoy networking and meeting new people.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn20" name="qn20" required>
+          </div>
+          <div>
+            <label for="qn21">I believe in giving back to the community and contributing to society.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn21" name="qn21" required>
+          </div>
+          <div>
+            <label for="qn22">Making a lot of money is important to me.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="intint" id="qn22" name="qn22" required>
+          </div>
+          <div>
+            <label for="qn23">I would prefer an office environment  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="intint" id="qn23" name="qn23" required>
+          </div>
+          <div>
+            <label for="qn24">I feel energized after socializing with others.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="intint" id="qn24" name="qn24" required>
+          </div>
+          
+          <div>
+            <label for="qn25">I prefer to approach tasks in a flexible and adaptable manner.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn25" name="qn25" required>
+          </div>
+
+          <div>
+            <label for="qn26">I feel more comfortable when things are organized and structured.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="inti  id="qn26" name="qn26" required>
+          </div>
+          <div>
+            <label for="qn27">I enjoy working with computers and technology  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn27" name="qn27" required>
+          </div>
+
+          <div>
+            <label for="qn28">I enjoy exploring different approaches and methods to accomplish tasks.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn28" name="qn28" required>
+          </div>
+          <div>
+            <label for="qn29">I prefer having a set routine and sticking to it.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn29" name="qn29" required>
+          </div>
+          <div>
+            <label for="qn30">I prefer having a clear plan and timeline for completing tasks.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn30" name="qn30" required>
+          </div>
+          <div>
+            <label for="qn31">I enjoy taking on new challenges and stepping outside my comfort zone.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn31" name="qn31" required>
+          </div>
+          <div>
+            <label for="qn32">I prefer routines and predictability in my daily life.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn32" name="qn32" required>
+          </div>
+          <div>
+            <label for="qn33"> I prefer tasks that allow for creative thinking  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn33" name="qn33" required>
+          </div>
+          <div>
+            <label for="qn34">I would describe myself as a religious or spiritual person  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn34" name="qn34" required>
+          </div>
+          <div>
+            <label for="qn35">I express my opinions strongly  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn35" name="qn35" required>
+          </div>
+          <div>
+            <label for="qn36">I am comfortable adapting to changes in plans or circumstances.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn36" name="qn36" required>
+          </div>
+          <div>
+            <label for="qn37">I am open to trying new approaches and strategies  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn37" name="qn37" required>
+          </div>
+          <div>
+            <label for="qn38">I am uncomfortable with confrontation  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn38" name="qn38" required>
+          </div>
+          <div>
+            <label for="qn39">I find it challenging to adjust to unexpected changes.  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn39" name="qn39" required>
+          </div>
+          <div>
+            <label for="qn40">I enjoy working outside or in research  (1:least likely, 2:partially likely, 3:neutral, 4:agree, 5:strongly agree)</label>
+            <input type="int" id="qn40" name="qn40" required>
+          </div>
+        
+          
+          <div>
+              <input type="submit" value="Submit">
+          </div>
+      </form>
+  </div>
+  
+  </body>
+  <body>
+
+    </body>
+
+</html>
